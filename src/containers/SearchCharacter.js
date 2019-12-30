@@ -1,19 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {queryBillboard} from '../actions/simpleAction'
+import {queryMarvel} from '../actions/simpleAction'
 
-const SearchArtist = ({dispatch}) => {
-    let input
+const SearchCharacter = ({dispatch}) => {
+    let input;
 
     return (
         <div>
             <form onSubmit={e => {
-                e.preventDefault()
+                e.preventDefault();
                 if (!input.value.trim()) {
                     return
                 }
 
-                dispatch(queryBillboard(input.value, 2018))
+                dispatch(queryMarvel(input.value.trim()));
 
                 input.value = ' '
             }
@@ -25,7 +25,6 @@ const SearchArtist = ({dispatch}) => {
             </form>
         </div>
 
-)
-}
+)};
 
-export default connect()(SearchArtist)
+export default connect()(SearchCharacter)
