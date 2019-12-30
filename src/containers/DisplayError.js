@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
-import Year from "../components/Year";
+import ErrorMessage from "../components/ErrorMessage";
 
 const mapStateToProps = state => ({
-    artists: state.artists
-})
+    errorMessage: state.errorMessage
+});
 
 export default connect(
     mapStateToProps,
-)(Year)
+)(ErrorMessage)
